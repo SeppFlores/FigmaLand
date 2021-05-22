@@ -1,0 +1,402 @@
+/* 
+1. Posicionamiento
+2. Modelo de caja
+3. Tipografia
+4. Temas visuales (shadows border radius)
+5. Otros 
+*/
+
+/* Iniciales */
+:root {
+    --primary: #EF2779;
+    --secondary: #7834BE;
+    --secondaryBlue: #38A3F1;
+    --text: #252B42;
+    --secondText: #374754;
+    --lightText: #FFFFFF;
+    --darkBackground: #252B42;
+    --lightBackground: #FFFFFF;
+    --H1-fontsize: 5.5rem;
+    --H2-fontsize: 4.6rem;
+    --H3-fontsize: 2.2rem;
+    --H4-fontsize: 1.6rem;
+    --H5-fontsize: 1.2rem;
+    --Button-fontsize: 1.6rem;
+    --Paragraphe-fontsize: 1.8rem;
+    --Link-fontsize: 1.5rem;
+    --MobileMenu-fontsize: 3.0rem;
+    --Gradient:39.97deg, #EF2779 0.79%, #7834BE 79.29%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Modificadores */
+
+.flex--center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex--left--center {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex--right--center {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.flex--column {
+    flex-direction: column;
+}
+
+.button--blue {
+    font-size: var(--Button-fontsize);
+    font-weight: bold;
+    color: var(--lightText);
+    background-color: var(--secondaryBlue);
+    border-radius: 3.5rem;
+    border: none;
+}
+
+.button--pink {
+    font-size: var(--Button-fontsize);
+    font-weight: bold;
+    color: var(--lightText);
+    background-color: var(--primary);
+    border-radius: 3.5rem;
+    border: none;
+}
+
+.card--slider {
+    display: flex;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+/* Estilos */
+
+body {
+    display: grid;
+    grid-template:  "header"        88.2rem
+                    "features"      58.1rem
+                    "prototyping"   76.9rem
+                    "newsletter"    60.1rem
+                    "partners"      160.1rem
+                    "testimonials"  78.9rem
+                    "pricing"       15.01rem
+                    "contact"       151.199rem
+                    "footer"        110.899rem / 100%;
+}
+
+.header {
+    grid-area: header;
+    width: 100%;
+    height: 82.7rem;
+    background-image: url('https://seppflores.github.io/Artifacts/img/Figmaland/gradient.svg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    height: 11.2rem;
+}
+
+.navbar__left { 
+    width: 50%;
+    height: 100%;
+}
+
+.navbar__img {
+    width: 18.6rem;
+    height: 5.8rem;
+    margin: 0 0 0 1.6rem;
+}
+
+.navbar__right { 
+    width: 50%;
+    height: 100%;
+    margin: 0 1.6rem 0 0rem;
+} 
+
+.navbar__menu {
+    width: 4rem;
+    height: 3.2rem;
+    background-image: url('https://seppflores.github.io/Artifacts/img/Figmaland/menuRight.svg');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 4rem 3.2rem;
+}
+
+.intro {
+    width: 100%;
+    height: 76.9rem;
+    padding-top: 8rem;
+}
+
+.intro__tittle {
+    width: 29.6rem;
+    height: 11.4rem;
+    text-align: center;
+    font-size: var(--H2-fontsize);
+    font-weight: 300;
+    color: var(--lightText);
+}
+
+.intro__text {
+    width: 29.8rem;
+    height: 4rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: var(--H4-fontsize);
+    color: var(--lightText);
+}
+
+.intro__three {
+    width: 100%;
+    height: 22.5rem;
+    margin-top: 5.9rem;
+}
+
+.intro__img {
+    width: 89%;
+    height: 22.5rem;
+}
+
+.intro__four {
+    width: 100%;
+    height: 17.4rem;
+}
+
+.intro__button {
+    width: 23.6rem;
+    height: 6.5rem;
+}
+
+.features {
+    width: 100%;
+    height: 52.1rem;
+}
+
+.features__header {
+    display: grid;
+    grid-template-areas:"features__subtitle"
+                        "features__tittle"
+                        "features__text";
+    grid-template-columns: 1fr;
+    grid-template-rows: 3.3rem 7.7rem 6rem;
+    row-gap: 0.7rem;
+    width: 31.8rem;
+    height: 18.4rem;
+    margin: 8rem auto 5rem auto;
+}
+
+.features__subtitle{
+    grid-area: features__subtitle;
+    font-size: var(--H3-fontsize);
+    font-weight: bold;
+    text-align: center;
+    margin: auto auto;
+    color: var(--text);
+}
+
+.features__tittle{
+    grid-area: features__tittle;
+    font-size: var(--H2-fontsize);
+    font-weight: 300;
+    text-align: center;
+    margin: auto auto;
+    color: var(--text);
+}
+
+.features__text{
+    grid-area: features__text;
+    font-size: var(--H4-fontsize);
+    font-weight: bold;
+    text-align: center;
+    margin: auto auto;
+    color: var(--secondText);
+}
+
+.features__points {
+    height: 20.7rem;
+    width: 90%;
+}
+
+.features__card {
+    display: grid;
+    grid-template-areas:"features__icon features__feature"
+                        "features__paragraph features__paragraph";
+    grid-template-columns: 7rem 20rem;
+    grid-template-rows: 8.6rem 10.1rem;
+    margin: 1rem 1rem;
+    height: 18.7rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(89,73,30,0.16);
+}
+
+.features__img {
+    grid-area: features__icon;
+    width: 4.3rem;
+    height: 4.3rem;
+    margin: auto;
+}
+
+.features__feature{ 
+    grid-area: features__feature;
+    font-size: var(--H3-fontsize);
+    text-align: center;
+    font-weight: bold;
+    color: var(--text);
+    margin: auto;
+}
+
+.features__paragraph {
+    grid-area: features__paragraph;
+    margin: auto;
+    text-align: center;
+    font-size: var(--Paragraphe-fontsize);
+    font-weight: 300;
+    color: var(--secondText);
+}
+
+.prototyping {
+    grid-area: prototyping;
+}
+
+.prototyping__tittle{
+    width: 31.6rem;
+    height: 13.4rem;
+    font-size: var(--H2-fontsize);
+    font-weight: 300;
+    text-align: center;
+    color: var(--text);
+    margin: 8rem auto 0;
+}
+
+.prototyping__text{
+    width: 31.6rem;
+    height: 6rem;
+    font-size: var(--H4-fontsize);
+    font-weight: bold;
+    text-align: center;
+    color: var(--secondText);
+}
+
+.prototyping__container{
+width: 100%;
+height: 18.3rem;
+}
+
+.prototyping__button{
+    width: 23.6rem;
+    height: 6.5rem;
+}
+
+.prototyping__img__container{
+    width: 100%;
+    height: 22.5rem;
+    margin-bottom: 8rem;
+}
+
+.prototyping__img{
+    width: 37.2rem;
+    height: 22.5rem;
+}
+
+.newsletter{
+    grid-area: newsletter;
+    width: 100%;
+    height: 60rem;
+    background: linear-gradient(39.97deg, #EF2779 0.79%, #7834BE 79.29%);
+}
+
+.newsletter__subtittle {
+    width: 17.5rem;
+    height: 3.3rem;
+    font-size: var(--H3-fontsize);
+    font-weight: bold;
+    text-align: center;
+    color: var(--lightText);
+    margin: 8rem auto 0.7rem;
+}
+
+.newsletter__h4{
+    width: 22,4rem;
+    height: 5.7rem;
+    font-size: var(--H2-fontsize);
+    font-weight: 400;
+    text-align: center;
+    color: var(--lightText);
+    margin: 0 auto 6.9rem;
+}
+
+.newsletter__action{
+    width: 27.9rem;
+    height: 3.3rem;
+    font-size: var(--H3-fontsize);
+    font-weight: 700;
+    text-align: center;
+    color: var(--lightText);
+    margin: 0 auto 1rem;
+}
+
+.newsletter__text{
+    width: 28.6rem;
+    height: 2.7rem;
+    font-size: var(--Paragraphe-fontsize);
+    font-weight: 400;
+    text-align: center;
+    color: var(--lightText);
+    margin: 0 auto 1rem;
+}
+
+.newsletter__container{
+    width: 100%;
+    height: 7.8rem;
+    margin-top: 1.2rem;
+}
+
+.newsletter__form {
+    width: 35.3rem;
+    height: 5.4rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    border-radius: 3.9rem;
+    border: 0.1rem #e8e8e8;
+    padding: 1.9rem 3.5rem;
+    background-color: #f4f4f4;
+}
+
+.newsletter__button__container{
+    width: 100%;
+    height: 16.4rem;
+}
+
+.newsletter__button{
+    width: 35.3rem;
+    height: 5rem;
+}
+
+/* footer */
+.footer {
+    grid-area: footer;
+}
